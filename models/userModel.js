@@ -10,7 +10,11 @@ const userSchema=new Schema({
         required:true,
         unique:true
     },
-    passwod:String,
+    password:{
+        type:String,
+        required:true,
+        unique:true
+    },
     image:String,
     role:{
         type:String,
