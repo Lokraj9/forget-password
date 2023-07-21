@@ -1,8 +1,9 @@
+import Header from '@/components/Global/Header'
 import React from 'react'
 
 const Home = () => {
-  return (
-    <div>Home</div>
+    
+    return (<><Header/><div className='text-2xl'>Home</div></>
   )
 }
 
