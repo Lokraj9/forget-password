@@ -5,7 +5,12 @@ const nextConfig = {
     },
     images:{
         domains:["lh3.googleusercontent.com","images.pexels.com"]
-    }
+    },
+    images: {
+        remotePatterns: [
+            { hostname: 'res.cloudinary.com', protocol: 'https', port: '' }
+        ]
+    },
 }
 
 module.exports = nextConfig

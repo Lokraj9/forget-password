@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
+    "cloudinary": "^1.38.0",
     "jsonwebtoken": "^9.0.1",
     "mongoose": "^7.3.4",
     "next": "13.4.10",
