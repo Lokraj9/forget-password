@@ -27,7 +27,7 @@ const Contact = () => {
       setContacts(contactsData.reverse()); // Reverse the order to display the latest contact first
     }
     fetchContacts();
-  }, []);
+  });
 
   return (
     <div className="mx-10 my-10 p-3 bg-white">

@@ -29,7 +29,7 @@ export default  function page() {
       setNotices(notices.reverse()); // Reverse the order to display the latest notice first
     }
     fetchNotices();
-  }, []);
+  });
   return (
     <>
    
