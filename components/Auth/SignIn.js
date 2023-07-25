@@ -18,47 +18,6 @@ const Signin = ({ callbackUrl }) => {
   }
   return (
     <div className="bg-blue-200 h-full w-1/2 m-auto rounded-sm p-3 px-9">
-      {/* <h2 className="text-3xl text-center mt-2 p-3">Sign In</h2>
-      {/* google login */}
-      {/* <div className="bg-green-200 w-fit m-auto mt-3 rounded">
-        <button
-          className="p-2"
-          onClick={() => signIn("google", { callbackUrl })}
-        >
-          continue with google
-        </button>
-      </div> */}
-      {/* signin with credentials */}
-      {/* <Form action={handleCredentials} className="flex flex-col p-5">
-        <input
-          className="p-2 mb-3 "
-          type="email"
-          name="email"
-          placeholder="Email"
-          required
-        />
-        <input
-          className="p-2"
-          type="password"
-          name="password"
-          placeholder="Password"
-          required
-        />
-        <Button
-          value="Login"
-          className="text-white  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5  mt-5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-        />
-      </Form> */}
-      {/*  forget password*/}
-      {/* <h2>Forgert Password</h2>
-      <Form action={handleForgetPassword} style={{ margin: "10px 0" }}>
-        <input type="email" name="email" placeholder="Email" required />
-        <Button value="forget password" />
-      </Form> */}
-      {/* <div style={{ margin: "30px 0" }}>
-        <Link href={"signup"}>SignUp</Link>
-
-      </div> */} 
       <div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
       <div className="w-full p-6 bg-white rounded-md shadow-md lg:max-w-xl">
         <h1 className="text-3xl font-bold text-center text-gray-700">Logo</h1>

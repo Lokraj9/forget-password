@@ -1,10 +1,13 @@
-import Signin from '@/components/Auth/SignIn'
-import React from 'react'
+import React from 'react';
+import Signin from '@/components/Auth/SignIn';
 
-const SignInPage = ({searchParams:{callbackUrl}}) => {
+const SignInPage = ({ searchParams }) => {
+  // Check if searchParams is defined and has the callbackUrl property
+  const callbackUrl = searchParams?.callbackUrl || "/";
+
   return (
-   <Signin callbackUrl={callbackUrl || "/"}/>
-  )
+    <Signin callbackUrl={callbackUrl} />
+  );
 }
 
-export default SignInPage
+export default SignInPage;
