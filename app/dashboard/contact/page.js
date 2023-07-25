@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { AiFillDelete } from "react-icons/ai";
 import RemoveNotice from "../components/RemoveNotice";
 import RemoveContact from "../components/RemoveContact";
@@ -18,9 +18,16 @@ const getContacts = async () => {
   }
 };
 
-const Contact = async () => {
-    const  contacts  = await getContacts();
-    console.log("contacts data:", contacts);
+const Contact = () => {
+  const [contacts, setContacts] = useState([]);
+
+  useEffect(() => {
+    async function fetchContacts() {
+      const contactsData = await getContacts();
+      setContacts(contactsData.reverse()); // Reverse the order to display the latest contact first
+    }
+    fetchContacts();
+  }, []);
 
   return (
     <div className="mx-10 my-10 p-3 bg-white">
@@ -59,26 +66,6 @@ const Contact = async () => {
           ))
          }
         </table>
-        {/* <div className="flex justify-between">
-          <h1>FullName</h1>
-          <h1>Email</h1>
-          <h1>PhoneNumber</h1>
-          <h1>Subject</h1>
-          <h1>Message</h1>
-          <h1>Delete</h1>
-        </div>
-        {
-          contacts.map(contact=>(
-            <div className="flex justify-between">
-        <h1>{contact.fullname}</h1>
-          <h1>{contact.email}</h1>
-          <h1>{contact.phoneNumber}</h1>
-          <h1>{contact.subject}</h1>
-          <h1>{contact.message}</h1>
-          <RemoveContact id={contact._id}/>
-        </div>
-          ))
-        } */}
        <Link className="ml-3" href={'/dashboard/addContact'}>Add Contact</Link>
     </div>
   );

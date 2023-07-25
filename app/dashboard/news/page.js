@@ -1,7 +1,7 @@
 'use client'
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { AiFillDelete } from "react-icons/ai";
 import { BiEdit, BiPlus } from "react-icons/bi";
 import image from "../../../public/c.jpg";
@@ -12,8 +12,18 @@ export async function fetchNews() {
   return res.json();
 }
 
-export default async function NewsPage( ) {
-  const news = await fetchNews();
+export default  function NewsPage( ) {
+  const [news, setNews] = useState([]);
+
+  useEffect(() => {
+    async function fetchNewsData() {
+      const newsData = await fetchNews();
+      setNews(newsData.reverse()); // Reverse the order to display the latest news first
+    }
+    fetchNewsData();
+  }, []);
+
+  
   return (
     <div className="bg-white w-[95%] m-auto mt-10 overflow-y-auto">
       <h1 className="text-center text-2xl font-bold pt-6">News</h1>

@@ -8,6 +8,8 @@ import { useRouter } from "next/navigation";
 export default function page() {
     const [title,setTitle]=useState("");
     const [description,setDescription]=useState("")
+    // const [notices, setNotices] = useState([]); 
+
      const router=useRouter()
     const handleSubmit=async(e)=>{
         e.preventDefault();
@@ -24,6 +26,8 @@ export default function page() {
                 body:JSON.stringify({title,description})
             });
             if(res.ok){
+                const newNotice = { title, description };
+                // setNotices([newNotice, ...notices]);
                 router.push("/dashboard/notice")
             }
             else{

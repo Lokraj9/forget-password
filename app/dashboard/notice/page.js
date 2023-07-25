@@ -1,7 +1,7 @@
-"use client";
+'use client'
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { AiFillDelete } from "react-icons/ai";
 import { BiEdit, BiPlus } from "react-icons/bi";
 import RemoveNotice from "../components/RemoveNotice";
@@ -19,8 +19,17 @@ const getNotices = async () => {
   }
 };
 
-export default async function page() {
-  const {notices}=await getNotices()
+export default  function page() {
+  // const {notices}=await getNotices()
+  const [notices, setNotices] = useState([]);
+
+  useEffect(() => {
+    async function fetchNotices() {
+      const { notices } = await getNotices();
+      setNotices(notices.reverse()); // Reverse the order to display the latest notice first
+    }
+    fetchNotices();
+  }, []);
   return (
     <>
    
