@@ -8,11 +8,12 @@ import { useRouter } from "next/navigation";
 
 
 const Signin = ({ callbackUrl }) => {
+  const router=useRouter()
   async function handleCredentials(formData) {
     const email = formData.get("email");
     const password = formData.get("password");
     await signIn("credentials", { email, password, callbackUrl }); 
-    Router.push("/dashboard")
+    router.push("/dashboard")
   }
   async function handleForgetPassword(formData) {
     const email = formData.get("email");
