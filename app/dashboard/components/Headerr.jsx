@@ -1,5 +1,7 @@
+import SignUpPage from "@/app/dashboard/signup/page";
 import SignOut from "@/components/Auth/SignOut";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { IoNotifications } from "react-icons/io5";
 
@@ -18,6 +20,7 @@ export default function Headerr() {
         Dashboard
       </div>
       <SignOut/>
+     <Link className="text-xl" href={"/dashboard/signup"}>SignUp</Link>
       <div className="flex gap-x-2 xl:gap-x-4">
         {/* <Image
           src="/user.svg"

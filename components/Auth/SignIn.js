@@ -4,12 +4,15 @@ import Link from "next/link";
 import Form from "../Global/Form";
 import Button from "../Global/Button";
 import { forgetPasswordWithCredentials } from "@/action/authActions";
+import { useRouter } from "next/navigation";
+
 
 const Signin = ({ callbackUrl }) => {
   async function handleCredentials(formData) {
     const email = formData.get("email");
     const password = formData.get("password");
     await signIn("credentials", { email, password, callbackUrl }); 
+    Router.push("/dashboard")
   }
   async function handleForgetPassword(formData) {
     const email = formData.get("email");
@@ -64,7 +67,7 @@ const Signin = ({ callbackUrl }) => {
           </div>
         </form>
 
-        <p className="mt-4 text-sm text-center text-gray-700">
+        {/* <p className="mt-4 text-sm text-center text-gray-700">
           Don't have an account?{" "}
           <Link
             href="/signup"
@@ -72,7 +75,7 @@ const Signin = ({ callbackUrl }) => {
           >
             Sign up
           </Link>
-        </p>
+        </p> */}
       </div>
     </div>
     </div>

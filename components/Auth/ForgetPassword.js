@@ -20,8 +20,8 @@ const ForgetPassword = ({ callbackUrl }) => {
           <h2>Forget Password</h2>
           <Form action={handleForgetPassword} style={{ margin: "10px 0" }}>
             <input type="email" name="email" placeholder="Email" required />
-            <Button value="forget password" />
-            <Link href={"/signin"}>Signin</Link>
+            <Button value="forget password" className="ml-4"/>
+            <Link className="ml-3" href={"/signin"}>Signin</Link>
           </Form>
         </div>
       </div>
