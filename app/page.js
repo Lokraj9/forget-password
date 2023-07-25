@@ -1,10 +1,9 @@
 import Header from '@/components/Global/Header'
 import React from 'react'
-import Dashboard from './dashboard/page'
 
 const Home = () => {
     
-    return (<><Dashboard/></>
+    return (<><Header/><div className='text-2xl'>Home</div></>
   )
 }
 
